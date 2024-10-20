@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 from ultralytics import YOLO
 
-path = Path('../runs/detect/train7/weights/best.pt')
+path = Path('./runs/detect/train7/weights/best.pt')
 
 
 def predict_image(image, image_name):
@@ -21,3 +21,4 @@ def predict_image(image, image_name):
     new_path = os.path.join(new_folder, f"{image_name}")
     shutil.move(new_name, new_path)
     shutil.rmtree(output_dir)
+    return new_path
