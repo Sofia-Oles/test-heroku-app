@@ -40,7 +40,7 @@ def upload_image():
         return send_file(path, mimetype='image/jpeg', as_attachment=False)
 
     else:
-        return redirect(request.url)
+        return jsonify({'error': 'Invalid file type'}), 400
 
 if __name__ == "__main__":
     app.run()
